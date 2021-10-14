@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
+    cache: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://8.135.107.8:3307/tale?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
+    username: root
+    password: 123456
+    tomcat:
+      max-active: 100
+      min-idle: 10
+      initial-size: 20
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  auto-runtime-dialect: count=countSql
+  helper-dialect: mysql
